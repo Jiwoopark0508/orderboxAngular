@@ -1,0 +1,7 @@
+{
+    "name" : "banana",
+    "price" : 3000,
+    "description": "신선하고 노란 바나나",
+    "available": ["학생매점", "편의점"],
+    "images" : ["img/banana1.jpg", "img/banana2.jpg", "img/banana3.jpg"]
+}

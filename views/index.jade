@@ -1,0 +1,23 @@
+extends ./layout.jade
+
+block title
+    title Ariticle
+block content
+    |Search : 
+    div( ng-controller = "OrderBoxCtrl as orderCtrl")
+        input( ng-model = "query")
+        |Sort by:
+        select( ng-model= "orderProp")
+            option( value = "name") Alphabetical
+            option( value = "age") Newest
+
+    
+        ul
+            li(ng-repeat="food in foods | filter : query | orderBy : orderProp")
+                span(ng-click = "func(); orderCtrl.func()") {{food.name}}
+                p {{food.price}}
+                p {{food.description}}
+
+    script(src = "javascripts/angular.min.js")
+    script(src = "javascripts/controllers.js")
+
