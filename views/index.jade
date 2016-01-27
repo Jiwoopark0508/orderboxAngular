@@ -1,7 +1,7 @@
 extends ./layout.jade
 
 block title
-    title Ariticle
+    title OrderBox
 block content
     |Search : 
     div( ng-controller = "OrderBoxCtrl as orderCtrl")
@@ -14,10 +14,19 @@ block content
     
         ul
             li(ng-repeat="food in foods | filter : query | orderBy : orderProp")
-                span(ng-click = "func(); orderCtrl.func()") {{food.name}}
+                span {{food.name}}
                 p {{food.price}}
                 p {{food.description}}
+                input( type = "number" ng-model = "quantity" min = "1" max = "5" value = "1")
+                button(ng-click = "addBasket(quantity); calculate();") 담기
 
+        div(style = "border: 1px solid black")
+            ul
+                li(ng-repeat = "goods in basket track by $index")
+                    span {{goods}}
+            span {{total}}
     script(src = "javascripts/angular.min.js")
+    script(src = "javascripts/jquery.min.js")
     script(src = "javascripts/controllers.js")
+
 

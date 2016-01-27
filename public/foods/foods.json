@@ -5,7 +5,8 @@
         "description" : "맛있는 라면",
         "available" : ["학생매점", "편의점"],
         "images": ["img/jinramen.jpeg", "img/ramen2.JPG", "img/ramen3.jpg"],
-        "age" : 2
+        "age" : 2,
+        "count" : 0
     },
     
     {
@@ -14,7 +15,8 @@
         "description": "야식의 끝판왕",
         "available" : ["굽네치킨", "BBQ", "교촌치킨"],
         "images": ["img/chicken1.jpeg", "img/chicken2.jpg", "img/chicken3.jpg"],
-        "age" : 1
+        "age" : 1,
+        "count" : 0
     },
 
     {
@@ -23,7 +25,8 @@
         "description": "신선하고 노란 바나나",
         "available": ["학생매점", "편의점"],
         "images" : ["img/banana1.jpg", "img/banana2.jpg", "img/banana3.jpg"],
-        "age": 3
+        "age": 3,
+        "count" : 0
     }
     
 ]
