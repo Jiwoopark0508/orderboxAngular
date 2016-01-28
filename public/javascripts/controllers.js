@@ -3,9 +3,11 @@
     var orderboxApp = angular.module('orderboxApp', []);
     var basket = [];
     var total = 0;
+
     orderboxApp.controller('OrderBoxCtrl', ['$scope', '$http', function($scope, $http){
 
             $http.get('foods/foods.json').success(function(data){
+                console.log(data);
                 $scope.foods = data;
             });
 
@@ -34,8 +36,16 @@
                             })
                         };
 
-            
+            $scope.remove = function(){
+                var item = this.goods;
+                item.count = 0;
+                $scope.basket = $.grep($scope.basket, function(good){
+                    console.log(good==item);
+                    return good !== item;
+                });
+                console.log($scope.basket);
 
+            }
             
     }]); 
 
