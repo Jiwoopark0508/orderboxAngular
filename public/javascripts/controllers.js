@@ -32,17 +32,16 @@
             // Calculate total price of basket
             $scope.calculate = function(){
                                 $scope.total = 0;
-                                $scope.basket.forEach(function(item){
-                                    $scope.total += item.price * item.count;
-                                })
+                                $scope.basket.forEach(function(_item){
+                                    $scope.total += _item.price * _item.count;
+                                });
                             };
             // Remove the item in the basket
             $scope.remove = function(){
                                 var item = this.goods;
                                 item.count = 0;
-                                $scope.basket = $.grep($scope.basket, function(good){
-                                    console.log(good==item);
-                                    return good !== item;
+                                $scope.basket = $.grep($scope.basket, function(_good){
+                                    return _good !== item;
                                 });
                             }
             
