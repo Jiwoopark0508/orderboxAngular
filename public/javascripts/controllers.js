@@ -1,4 +1,5 @@
 'use strict';
+
 (function($){
     var orderboxApp = angular.module('orderboxApp', []);
     var basket = [];
@@ -11,41 +12,39 @@
                 $scope.foods = data;
             });
 
-
-            $scope.quantity = 1;
-            $scope.basket = basket;
-            $scope.total = total;
             $scope.orderProp = 'age';
 
+            $scope.basket = basket;
+            $scope.total = total;
+
             $scope.addBasket = function(_quantity){
-                        var index = $.inArray(this.food, $scope.basket);
-                        // food is in the basket
-                        if( index !== -1){
-                            $scope.basket[index].count += _quantity;
-                        }
-                        // food is not in the basket
-                        else{
-                            this.food.count = _quantity;
-                            $scope.basket.push(this.food);   
-                        }
+                                var index = $.inArray(this.food, $scope.basket);
+                                // food is in the basket
+                                if( index !== -1){
+                                    $scope.basket[index].count += _quantity;
+                                }
+                                // food is not in the basket
+                                else{
+                                    this.food.count = _quantity;
+                                    $scope.basket.push(this.food);   
+                                }
                             };
+            // Calculate total price of basket
             $scope.calculate = function(){
-                            $scope.total = 0;
-                            $scope.basket.forEach(function(item){
-                                $scope.total += item.price * item.count;
-                            })
-                        };
-
+                                $scope.total = 0;
+                                $scope.basket.forEach(function(item){
+                                    $scope.total += item.price * item.count;
+                                })
+                            };
+            // Remove the item in the basket
             $scope.remove = function(){
-                var item = this.goods;
-                item.count = 0;
-                $scope.basket = $.grep($scope.basket, function(good){
-                    console.log(good==item);
-                    return good !== item;
-                });
-                console.log($scope.basket);
-
-            }
+                                var item = this.goods;
+                                item.count = 0;
+                                $scope.basket = $.grep($scope.basket, function(good){
+                                    console.log(good==item);
+                                    return good !== item;
+                                });
+                            }
             
     }]); 
 
