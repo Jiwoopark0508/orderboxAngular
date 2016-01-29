@@ -13,7 +13,7 @@
             });
 
             $scope.orderProp = 'age';
-
+            $scope.quantity = 1;
             $scope.basket = basket;
             $scope.total = total;
 

@@ -17,7 +17,7 @@ block content
                 span {{food.name}}
                 p {{food.price}}
                 p {{food.description}}
-                input( type = "number" ng-model = "quantity" min = "1" value = "1")
+                input( type = "number" ng-model = "quantity" min = "1")
                 button(ng-click = "addBasket(quantity); calculate();") 담기
 
         div(style = "border: 1px solid black")
@@ -25,7 +25,7 @@ block content
                 li(ng-repeat = "goods in basket track by $index")
                     span {{goods}}
                     span {{goods.count * goods.price}}
-                    input(type = "number" ng-model = "goods.count" ng-value = "goods.count")
+                    input(type = "number" ng-click = "calculate()" ng-model = "goods.count" ng-value = "goods.count")
                     a(ng-click = "remove(); calculate()") [x]
             span {{total}}
     script(src = "javascripts/angular.min.js")
